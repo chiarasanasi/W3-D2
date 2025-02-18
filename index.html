@@ -227,44 +227,34 @@
 
         const tableRow1 = document.createElement("tr")
         const tableRow2 = document.createElement("tr")
-        const tableRow3 = document.createElement("tr")
-        const tableRow4 = document.createElement("tr")
         table.appendChild(tableRow1)
         table.appendChild(tableRow2)
-        table.appendChild(tableRow3)
-        table.appendChild(tableRow4)
 
-        //ROW 1 - TITOLO E IMG
+        //ROW 1 - TITOLO E IMG, nome prodotto, quantità e prezzo
         const tableImg = document.createElement("td")
-        tableImg.innerText = "Cagnolino con gli occhiali"
+        tableImg.innerText = "Immagine"
 
-        const tableCol1 = document.createElement("td")
-        const immagine = document.createElement("img")
-        immagine.setAttribute("src", "https://placedog.net/50/50")
+        const tableNomeProdotto = document.createElement("td")
+        tableNomeProdotto.innerText = "Nome prodotto"
 
-        tableCol1.appendChild(immagine)
+        const tableQuant = document.createElement("td")
+        tableQuant.innerText = "Quantità"
+
+        const tablePrezzo = document.createElement("td")
+        tablePrezzo.innerText = "Prezzo"
 
         tableRow1.appendChild(tableImg)
-        tableRow1.appendChild(tableCol1)
+        tableRow1.appendChild(tableNomeProdotto)
+        tableRow1.appendChild(tableQuant)
+        tableRow1.appendChild(tablePrezzo)
 
-        //ROW 2 - nome prodotto
-        const tableCol2 = document.createElement("td")
-        tableCol2.innerText = "Nome prodotto"
+        //ROW 2 - immagine
 
-        tableRow2.appendChild(tableCol2)
+        const immagine = document.createElement("img")
+        immagine.setAttribute("src", "https://placedog.net/50/50")
+        immagine.setAttribute("onClick", "hideAllImages()")
 
-        //ROW 3 - quantità
-        const tableCol3 = document.createElement("td")
-        tableCol3.innerText = "Quantità"
-
-        tableRow3.appendChild(tableCol3)
-
-        //ROW 4 - prezzo
-
-        const tableCol4 = document.createElement("td")
-        tableCol4.innerText = "Prezzo"
-
-        tableRow4.appendChild(tableCol4)
+        tableRow2.appendChild(immagine)
       }
       generateTable()
 
@@ -275,7 +265,7 @@
       const addRow = function () {
         const table = document.querySelector("#tableArea table")
         const newRow = document.createElement("tr")
-        newRow.innerText = "Altro dato aggiunto"
+        newRow.innerText = "Altro RIGA aggiunta"
         table.appendChild(newRow)
       }
 
@@ -291,7 +281,6 @@
           element.style.visibility = "hidden"
         })
       }
-      hideAllImages()
 
       /* EXTRA ESERCIZIO 15
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
