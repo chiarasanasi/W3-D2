@@ -127,9 +127,7 @@
 
       const changeUrls = function () {
         const links = document.getElementsByTagName("a")
-        console.log(links)
         const linkFooter = document.querySelector("footer a")
-        console.log(linkFooter)
 
         for (let i = 0; i < links.length; i++) {
           if (links[i] === linkFooter) {
@@ -202,6 +200,7 @@
         title[0].innerText = title[0].innerText.slice(0, -1)
         console.log(title[0])
       }
+
       /* ESERCIZIO 10
          Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
         */
@@ -286,12 +285,27 @@
         Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
       */
 
-      const changeColorWithRandom = function () {
-        const h2Change = document.getElementById("changeMyColor")
-        let randomColor = "#" + Math.floor(Math.random() * 1000000)
-        console.log(randomColor)
+      // const changeColorWithRandom = function () {
+      //   const h2Change = document.getElementById("changeMyColor")
+      //   let randomColor = "#" + Math.floor(Math.random() * 1000000)
+      //   console.log(randomColor)
 
-        h2Change.style.color = randomColor
+      //   h2Change.style.color = randomColor
+      // }
+
+      // oppure
+
+      const changeColorWithRandom = function () {
+        const colorChanger = document.getElementById("changeMyColor")
+        // let randomColor =
+        //   '#' + Math.floor(Math.random() * 16777215).toString(16)
+        // colorChanger.style.color = randomColor
+        const randomColor = `rgb(${Math.floor(
+          Math.random() * 256
+        )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+          Math.random() * 256
+        )})`
+        colorChanger.style.color = randomColor
       }
     </script>
   </body>
